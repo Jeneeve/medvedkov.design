@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yevhen Medvedkov — Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&family=Syne:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#statement">Skip to content</a>
+
+    <main class="snap" id="snap" aria-label="Portfolio sections">
+      <!-- HERO -->
+      <header class="hero snap__section" id="top" aria-label="Hero">
+        <div class="hero__frame">
+          <nav class="nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#works">Works</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <img class="world" src="./images/World.svg" alt="" aria-hidden="true" />
+
+          <div class="marquee marquee--top" aria-hidden="true">
+            <div class="marquee__track marquee__track--right">
+              <div class="marquee__content">
+                <span class="marquee__text marquee__text--white">YEVHEN MEDVEDKOV</span>
+                <span class="marquee__text marquee__text--white">YEVHEN MEDVEDKOV</span>
+                <span class="marquee__text marquee__text--white">YEVHEN MEDVEDKOV</span>
+                <span class="marquee__text marquee__text--white">YEVHEN MEDVEDKOV</span>
+              </div>
+              <div class="marquee__content">
+                <span class="marquee__text marquee__text--white">YEVHEN MEDVEDKOV</span>
+                <span class="marquee__text marquee__text--white">YEVHEN MEDVEDKOV</span>
+                <span class="marquee__text marquee__text--white">YEVHEN MEDVEDKOV</span>
+                <span class="marquee__text marquee__text--white">YEVHEN MEDVEDKOV</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="marquee marquee--bottom" aria-hidden="true">
+            <div class="marquee__track marquee__track--left">
+              <div class="marquee__content">
+                <span class="marquee__text marquee__text--steel">DESIGN IS INFRASTRUCTURE</span>
+                <span class="marquee__text marquee__text--steel">DESIGN IS INFRASTRUCTURE</span>
+                <span class="marquee__text marquee__text--steel">DESIGN IS INFRASTRUCTURE</span>
+                <span class="marquee__text marquee__text--steel">DESIGN IS INFRASTRUCTURE</span>
+              </div>
+              <div class="marquee__content">
+                <span class="marquee__text marquee__text--steel">DESIGN IS INFRASTRUCTURE</span>
+                <span class="marquee__text marquee__text--steel">DESIGN IS INFRASTRUCTURE</span>
+                <span class="marquee__text marquee__text--steel">DESIGN IS INFRASTRUCTURE</span>
+                <span class="marquee__text marquee__text--steel">DESIGN IS INFRASTRUCTURE</span>
+              </div>
+            </div>
+          </div>
+
+          <img class="bust" src="./images/HeadofM.png" alt="Sculpture bust" />
+        </div>
+      </header>
+
+      <!-- STATEMENT -->
+      <section class="statement snap__section" id="statement" aria-label="Statement">
+        <div class="statement__inner">
+          <h2 class="type typewriter" data-typewriter>
+            <span class="type__line"><span class="type__chunk type__chunk--white">I use illustration, graphics,</span></span>
+            <span class="type__line"><span class="type__chunk type__chunk--white">and motion as tools to</span></span>
+            <span class="type__line"><span class="type__chunk type__chunk--white">strengthen product identity</span></span>
+            <span class="type__line">
+              <span class="type__chunk type__chunk--white">and communication, </span>
+              <span class="type__chunk type__chunk--accent">Not</span>
+            </span>
+            <span class="type__line"><span class="type__chunk type__chunk--accent">as standalone decoration.</span></span>
+          </h2>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about snap__section" id="about" aria-label="About">
+        <div class="about__inner">
+          <h2 class="about__title reveal" data-reveal>ABOUT ME</h2>
+
+          <div class="about__content" role="group" aria-label="About content">
+            <div class="about__text reveal" data-reveal data-reveal-delay="80">
+              <p>I’m a product designer focused on digital services, e-commerce, and platforms.</p>
+              <p>
+                I work at the intersection of UX/UI, branding, and business logic — thinking not only
+                about how an interface looks, but how it generates value and scales.
+              </p>
+              <p>Currently based in Belgium, open to freelance, part-time, and product roles.</p>
+            </div>
+
+            <div class="about__visual reveal" data-reveal data-reveal-delay="160">
+              <img class="about__img" src="./images/about-figure.png" alt="" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="skills snap__section" id="skills" aria-label="Skills">
+        <div class="skills__inner">
+          <h2 class="skills__title reveal" data-reveal>SKILLS</h2>
+
+          <div class="skills__list" data-skills>
+            <div class="skill" data-skill="product-ux">
+              <button class="skill__row" type="button" aria-expanded="false" aria-controls="panel-product-ux">
+                <span class="skill__label">Product & UX/UI Design</span>
+                <span class="skill__icon" aria-hidden="true">↘</span>
+              </button>
+              <div class="skill__panel" id="panel-product-ux" hidden>
+                <div class="skill__panel-body">
+                  <ul class="skill__bullets"></ul>
+                  <div class="skill__visual">
+                    <img class="skill__img" src="./images/product-UX.png" alt="" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="ecommerce">
+              <button class="skill__row" type="button" aria-expanded="false" aria-controls="panel-ecommerce">
+                <span class="skill__label">E-commerce UX</span>
+                <span class="skill__icon" aria-hidden="true">↘</span>
+              </button>
+              <div class="skill__panel" id="panel-ecommerce" hidden>
+                <div class="skill__panel-body">
+                  <ul class="skill__bullets"></ul>
+                  <div class="skill__visual">
+                    <img class="skill__img" src="" alt="" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="design-systems">
+              <button class="skill__row" type="button" aria-expanded="false" aria-controls="panel-design-systems">
+                <span class="skill__label">Design Systems</span>
+                <span class="skill__icon" aria-hidden="true">↘</span>
+              </button>
+              <div class="skill__panel" id="panel-design-systems" hidden>
+                <div class="skill__panel-body">
+                  <ul class="skill__bullets"></ul>
+                  <div class="skill__visual">
+                    <img class="skill__img" src="" alt="" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="visual">
+              <button class="skill__row" type="button" aria-expanded="false" aria-controls="panel-visual">
+                <span class="skill__label">Visual & Creative Direction</span>
+                <span class="skill__icon" aria-hidden="true">↘</span>
+              </button>
+              <div class="skill__panel" id="panel-visual" hidden>
+                <div class="skill__panel-body">
+                  <ul class="skill__bullets"></ul>
+                  <div class="skill__visual">
+                    <img class="skill__img" src="" alt="" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill" data-skill="product-visual">
+              <button class="skill__row" type="button" aria-expanded="false" aria-controls="panel-product-visual">
+                <span class="skill__label">Product & Visual Presentations</span>
+                <span class="skill__icon" aria-hidden="true">↘</span>
+              </button>
+              <div class="skill__panel" id="panel-product-visual" hidden>
+                <div class="skill__panel-body">
+                  <ul class="skill__bullets"></ul>
+                  <div class="skill__visual">
+                    <img class="skill__img" src="" alt="" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section class="works snap__section" id="works" aria-label="Works">
+  <div class="works__inner">
+    <h2 class="works__title reveal" data-reveal>WORKS</h2>
+
+    <!-- MAPSTER -->
+    <article class="work work--mapster reveal" data-reveal data-reveal-delay="80">
+      <!-- LEFT BIG CARD -->
+      <div class="work__card">
+        <img class="work__laptop" src="./images/MBP.png" alt="Mapster preview on laptop" />
+      </div>
+
+      <!-- MIDDLE COLUMN -->
+      <div class="work__mid" aria-hidden="true">
+        <img class="work__mark" src="./images/Palm.svg" alt="" />
+        <div class="work__phones">
+          <img class="work__phone" src="./images/MapMain.png" alt="" />
+          <img class="work__phone" src="./images/MapProduct.png" alt="" />
+        </div>
+      </div>
+
+      <!-- RIGHT TEXT COLUMN -->
+      <div class="work__text">
+        <h3 class="work__name">Mapster.ae</h3>
+
+        <p class="work__desc">
+          Mapster is a modular travel ecosystem for tourists and local partners.
+          One service for travelers and separate products for guides, drivers, realtors, and operators.
+        </p>
+
+        <div class="work__tag">Web+app</div>
+
+        <a class="work__cta" href="./projects/Mapster.html">
+          <img class="work__arrow" src="./images/Arrow.svg" alt="" aria-hidden="true" />
+          <span class="work__cta-text">See project</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- DOMUS -->
+    <article class="work work--domus reveal" data-reveal data-reveal-delay="120">
+      <div class="work__text work__text--left">
+        <h3 class="work__name work__name--small">Domus</h3>
+
+        <p class="work__desc work__desc--left">
+          The project was developed as a full-cycle design case, covering both digital product design and brand identity.
+        </p>
+
+        <div class="work__tag work__tag--left">Logo+Identity+Web+Map</div>
+
+        <a class="work__cta work__cta--left" href="./projects/Domus.html">
+          <img class="work__arrow" src="./images/Arrow.svg" alt="" aria-hidden="true" />
+          <span class="work__cta-text">See project</span>
+        </a>
+      </div>
+
+      <div class="work__mid" aria-hidden="true">
+        <img class="work__mark" src="./images/mind.svg" alt="" />
+        <div class="work__phones">
+          <img class="work__phone" src="./images/D2.png" alt="" />
+          <img class="work__phone" src="./images/D5.png" alt="" />
+        </div>
+      </div>
+
+      <div class="work__card">
+        <img class="work__laptop" src="./images/MBPD.png" alt="Domus preview" />
+      </div>
+    </article>
+
+    <!-- 8CREW -->
+    <article class="work work--crew reveal" data-reveal data-reveal-delay="160">
+      <div class="work__card">
+        <img class="work__laptop" src="./images/MBP8.png" alt="8CREW preview" />
+      </div>
+
+      <div class="work__mid" aria-hidden="true">
+        <img class="work__mark" src="./images/star.svg" alt="" />
+        <div class="work__phones">
+          <img class="work__phone" src="./images/81.png" alt="" />
+          <img class="work__phone" src="./images/82.png" alt="" />
+        </div>
+      </div>
+
+      <div class="work__text">
+        <h3 class="work__name">8CREW</h3>
+
+        <p class="work__desc">
+          A fully responsive e-commerce website was designed, covering both desktop and mobile versions.
+        </p>
+
+        <div class="work__tag">Web+mobile</div>
+
+        <a class="work__cta" href="./projects/8Crew.html">
+          <img class="work__arrow" src="./images/Arrow.svg" alt="" aria-hidden="true" />
+          <span class="work__cta-text">See project</span>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- CONTACT -->
+<section class="contact snap__section" id="contact" aria-label="Contact me">
+  <div class="contact__inner">
+
+    <!-- LEFT -->
+    <div class="contact__left">
+      <h2 class="contact__title">Contact Me</h2>
+
+      <img
+        src="./images/Worldwide.png"
+        alt="Worldwide availability"
+        class="contact__image"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <!-- RIGHT -->
+    <div class="contact__right">
+
+      <a href="tel:+32474062239" class="contact__phone">
+        +32&nbsp;474&nbsp;06&nbsp;22&nbsp;39
+      </a>
+
+      <a href="mailto:genevesworld@gmail.com" class="contact__email">
+        genevesworld@gmail.com
+      </a>
+
+      <div class="contact__links">
+        <a href="https://www.instagram.com/geneve.m/#" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/Jeneeve" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/32474062239" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <div class="contact__links contact__links--secondary">
+        <a href="https://dribbble.com/Geneve_M" target="_blank" rel="noopener">{Dribbble}</a>
+        <a href="https://www.behance.net/Geneve_m" target="_blank" rel="noopener">{Behance}</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
