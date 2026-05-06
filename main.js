@@ -117,126 +117,121 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===== SKILLS accordion + line draw =====
-  const skillsRoot = document.querySelector("[data-skills]");
-  if (skillsRoot) {
-    const items = Array.from(skillsRoot.querySelectorAll(".skill"));
 
-    const DATA = {
-      "product-ux": {
-        bullets: [
-          "Web & mobile applications",
-          "SaaS and platform products",
-          "MVP → scale-ready solutions",
-          "UX structure, flows, and logic",
-        ],
-        img: "./images/Product-UX.png",
-      },
-      ecommerce: {
-        bullets: [
-          "Product catalogs & listings",
-          "Product pages & conversion flows",
-          "UX for migrations and growth",
-          "Mobile-first e-commerce design",
-        ],
-        img: "./images/E-commerce.png",
-      },
-      "design-systems": {
-        bullets: [
-          "Scalable component libraries",
-          "Figma-based systems",
-          "Consistency across products and teams",
-        ],
-        img: "./images/Design.png",
-      },
-      visual: {
-        bullets: [
-          "Custom illustrations & graphic elements",
-          "Poster and campaign visuals",
-          "Editorial and promotional graphics",
-          "Motion & video editing (Premiere Pro)",
-        ],
-        img: "./images/Visual.png",
-      },
-      "product-visual": {
-        bullets: ["Product decks & case studies", "Pitch presentations", "Clear visual storytelling"],
-        img: "./images/Product-Visual.png",
-      },
-    };
+const skillsRoot = document.querySelector("[data-skills]");
 
-    const closeAll = () => {
-  items.forEach((item) => {
-    const btn = item.querySelector(".skill__row");
-    const panel = item.querySelector(".skill__panel");
-    if (!btn || !panel) return;
+if (skillsRoot) {
+  const items = Array.from(skillsRoot.querySelectorAll(".skill"));
 
-    btn.setAttribute("aria-expanded", "false");
-    item.classList.remove("is-open");
+  const DATA = {
+    "product-ux": {
+      text: "I design user-centered digital products with a strong focus on structure, usability, and visual clarity — from the first sketch to a working prototype.",
+      img: "./images/Product-UX.png",
+    },
 
-    // ✅ даём CSS-анимации закрытия отработать
-    panel.addEventListener(
-      "transitionend",
-      () => {
-        if (!item.classList.contains("is-open")) panel.hidden = true;
-      },
-      { once: true }
-    );
-  });
-};
+    ecommerce: {
+      text: "I create conversion-focused layouts and user flows for e-commerce platforms, connecting user experience with business goals.",
+      img: "./images/E-commerce.png",
+    },
 
+    "design-systems": {
+      text: "I understand how to build scalable and consistent design systems — ensuring a product always looks professional and cohesive.",
+      img: "./images/Design.png",
+    },
+
+    visual: {
+      text: "I develop visual concepts, brand identity, and storytelling across different media — from logos to complete brand books.",
+      img: "./images/Visual.png",
+    },
+
+    "product-visual": {
+      text: "I communicate ideas clearly through structured layouts and visual storytelling — whether for client presentations or academic projects.",
+      img: "./images/Product-Visual.png",
+    },
+  };
+
+  const closeAll = () => {
     items.forEach((item) => {
-      const key = item.dataset.skill;
       const btn = item.querySelector(".skill__row");
       const panel = item.querySelector(".skill__panel");
-      const ul = item.querySelector(".skill__bullets");
-      const img = item.querySelector(".skill__img");
 
-      if (!btn || !panel || !ul || !img) return;
+      if (!btn || !panel) return;
 
-      btn.addEventListener("click", () => {
-        const isOpen = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", "false");
+      item.classList.remove("is-open");
 
-        closeAll();
+      panel.addEventListener(
+        "transitionend",
+        () => {
+          if (!item.classList.contains("is-open")) {
+            panel.hidden = true;
+          }
+        },
+        { once: true }
+      );
+    });
+  };
 
-        if (isOpen) return;
+  items.forEach((item) => {
+    const key = item.dataset.skill;
 
-        // fill content
-        ul.innerHTML = "";
-        const conf = DATA[key];
-        if (conf?.bullets) {
-          conf.bullets.forEach((t) => {
-            const li = document.createElement("li");
-            li.textContent = t;
-            ul.appendChild(li);
-          });
-        }
-        img.src = conf?.img || "";
-        img.alt = "";
-        img.setAttribute("aria-hidden", "true");
+    const btn = item.querySelector(".skill__row");
+    const panel = item.querySelector(".skill__panel");
+    const text = item.querySelector(".skill__text");
+    const img = item.querySelector(".skill__img");
 
-        // open
-        btn.setAttribute("aria-expanded", "true");
-        panel.hidden = false;
-        item.classList.add("is-open");
+    if (!btn || !panel || !text || !img) return;
 
-        // keep in view inside snap scroller
-        item.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    btn.addEventListener("click", () => {
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+      closeAll();
+
+      if (isOpen) return;
+
+      const conf = DATA[key];
+
+      if (conf?.text) {
+        text.textContent = conf.text;
+      }
+
+      img.src = conf?.img || "";
+      img.alt = "";
+      img.setAttribute("aria-hidden", "true");
+
+      btn.setAttribute("aria-expanded", "true");
+
+      panel.hidden = false;
+
+      item.classList.add("is-open");
+
+      item.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
       });
     });
+  });
 
-    // line draw when section enters
-    const skillsSection = document.querySelector("#skills");
-    if (skillsSection) {
-      const linesObserver = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((e) => {
-            if (!e.isIntersecting) return;
-            skillsSection.classList.add("lines-on");
-            obs.unobserve(skillsSection);
-          });
-        },
-        { root, threshold: 0.55 }
-      );
-      linesObserver.observe(skillsSection);
-    }
+  const skillsSection = document.querySelector("#skills");
+
+  if (skillsSection) {
+    const linesObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+
+          skillsSection.classList.add("lines-on");
+
+          obs.unobserve(skillsSection);
+        });
+      },
+      {
+        root,
+        threshold: 0.55,
+      }
+    );
+
+    linesObserver.observe(skillsSection);
   }
+}
 });

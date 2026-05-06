@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Night Harvest — Medvedkov</title>
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .project-page {
+      background: #050505;
+      color: #FAF7F2;
+      overflow-x: hidden;
+    }
+
+    .project-container {
+      width: min(1400px, 100%);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================
+       HERO VIDEO
+    ========================= */
+
+    .project-hero {
+      position: relative;
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+    }
+
+    .project-hero__video {
+      width: 100%;
+      height: 100vh;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    .project-hero__overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.2),
+          rgba(0,0,0,0.55)
+        );
+    }
+
+    .project-hero__content {
+      position: absolute;
+      z-index: 2;
+
+      bottom: 80px;
+      left: 80px;
+    }
+
+    .project-hero__title {
+      margin: 0 0 18px 0;
+
+      font-family: var(--font-display);
+      font-size: clamp(64px, 8vw, 140px);
+      line-height: 0.9;
+      font-weight: 600;
+
+      color: white;
+    }
+
+    .project-hero__tag {
+      font-size: 22px;
+      color: rgba(255,255,255,0.78);
+    }
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    .project-content {
+      padding: 140px 0;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 120px;
+    }
+
+    .project-heading {
+      margin: 0 0 40px 0;
+
+      font-family: var(--font-display);
+      font-size: clamp(42px, 5vw, 74px);
+      line-height: 1;
+      font-weight: 600;
+
+      text-transform: uppercase;
+    }
+
+    .project-text {
+      font-size: 24px;
+      line-height: 1.7;
+
+      color: rgba(255,255,255,0.82);
+    }
+
+    .project-text p {
+      margin: 0 0 42px 0;
+    }
+
+    /* =========================
+       STRUCTURE
+    ========================= */
+
+    .project-structure {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .project-block h3 {
+      margin: 0 0 20px 0;
+
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .project-block ul {
+      margin: 0;
+      padding-left: 20px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .project-block li {
+      font-size: 22px;
+      line-height: 1.5;
+
+      color: rgba(255,255,255,0.74);
+    }
+
+    .project-block li::marker {
+      color: #24E1E4;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1100px) {
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+
+      .project-hero__content {
+        left: 24px;
+        bottom: 40px;
+      }
+
+      .project-content {
+        padding: 90px 0;
+      }
+
+      .project-text {
+        font-size: 18px;
+      }
+
+      .project-block li {
+        font-size: 18px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body class="project-page">
+
+  <!-- HERO -->
+  <section class="project-hero">
+
+    <video
+      class="project-hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="../video/night-harvest.webm" type="video/webm" />
+      <source src="../video/night-harvest.mp4" type="video/mp4" />
+    </video>
+
+    <div class="project-hero__overlay"></div>
+
+    <div class="project-hero__content">
+
+      <h1 class="project-hero__title">
+        Night<br />
+        Harvest
+      </h1>
+
+      <div class="project-hero__tag">
+        Unity + C# Survival Game
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+  <section class="project-content">
+
+    <div class="project-container">
+
+      <div class="project-grid">
+
+        <!-- LEFT -->
+        <div>
+
+          <h2 class="project-heading">
+            Overview
+          </h2>
+
+          <div class="project-text">
+
+            <p>
+              Night Harvest is a playable 3D survival game developed in Unity
+              using C# as part of a school project focused on gameplay systems,
+              interaction, and level mechanics.
+            </p>
+
+            <p>
+              The objective was to create a complete gameplay loop where the
+              player explores the environment, collects resources, avoids enemies,
+              manages health, and reaches victory conditions.
+            </p>
+
+            <p>
+              The project combined game design, scripting, environment setup,
+              player interaction systems, and UI logic into a fully functional
+              prototype experience.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+
+          <h2 class="project-heading">
+            Structure
+          </h2>
+
+          <div class="project-structure">
+
+            <div class="project-block">
+
+              <h3>Gameplay Systems</h3>
+
+              <ul>
+                <li>Player movement and interaction</li>
+                <li>Resource collection mechanics</li>
+                <li>Health and damage system</li>
+                <li>Win and lose conditions</li>
+              </ul>
+
+            </div>
+
+            <div class="project-block">
+
+              <h3>Enemy AI</h3>
+
+              <ul>
+                <li>Enemy detection and chasing</li>
+                <li>Collision and attack logic</li>
+                <li>Game-over behavior</li>
+                <li>Basic AI movement patterns</li>
+              </ul>
+
+            </div>
+
+            <div class="project-block">
+
+              <h3>Tools Used</h3>
+
+              <ul>
+                <li>Unity Engine</li>
+                <li>C# scripting</li>
+                <li>3D environment setup</li>
+                <li>UI and gameplay integration</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
