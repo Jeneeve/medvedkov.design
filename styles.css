@@ -515,6 +515,7 @@ html.js .typewriter .type__chunk.is-done {
   transform: translateY(6px) rotate(90deg);
 }
 
+
 .skill::after {
   content: "";
   position: absolute;
